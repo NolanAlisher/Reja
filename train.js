@@ -1,3 +1,17 @@
+// TASK B
+/*
+Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+ */
+// MASHQ YECHIMI
+function countNums(a) {
+  const nums = a.split("").filter((char) => char >= "0" && char <= "9").length;
+  return nums;
+}
+const result = countNums("ad2a54y79wet0sfgb9");
+console.log("result:", result);
+// IZOH: split bilan yakkalab olyapman va filter bilan har bir yahlitlangan character'ni function'dagi ish harakatga solyapman yani 0 ga teng yoki katta va 9 teng yoki kichik bu bilan 0dan 9gacha bolgan hamma sonlarga solishtirish amalga oshadi va bizga hamma sonlani korsatadi hatto 3, 5, 100 honali son bolsa ham.
+
 // Task A
 /* 
 Harf sifatida kiritilgan birinchi parametr, 
@@ -9,17 +23,17 @@ Masalan: countLetter("e", "engineer")
 3 sonini qaytaradi
 */
 // Masalaning Yechimi!
-function countLetter(harf, soz) {
-  let sanoq = 0;
-  for (let i = 0; i < soz.length; i++) {
-    if (soz[i] === harf) {
-      sanoq++; // sanoq = sanoq + 1;
-    }
-  }
+// function countLetter(harf, soz) {
+//   let sanoq = 0;
+//   for (let i = 0; i < soz.length; i++) {
+//     if (soz[i] === harf) {
+//       sanoq++; // sanoq = sanoq + 1;
+//     }
+//   }
 
-  return sanoq;
-}
-console.log(countLetter("e", "engineer"));
+//   return sanoq;
+// }
+// console.log(countLetter("e", "engineer"));
 
 // Izoh: For loopdan foydalandim. Bu yerda "countLetter" nomli function yaratdim, va function ichida sanoq nomli o'zgaruvchi 0 ga tengladim chunki har safar 0 dan boshla deyapman. Keyin for loop, "string" larni sanab olishni property'si bor ekan ' .length' bu bizga valueni sanab beradi array property'siga o'xshab ishlaydi, har safar bittaga oshir dedim. if'ni qo'lladim bu yerda soz[i] valueni index'larini olish yo'li bizga value qaytaradi va shu value berilgan harfga "strongly" tengladim va if part "true" bo'lsa sanoqni return qil.
 
