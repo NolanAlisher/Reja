@@ -84,7 +84,7 @@
               <p class="left_3_title">Languages</p>
             </div>
             <div class="left_3_top left_3_all">
-              <p>Uzbek</p>
+              <p><%=user.languages[0]%></p>
               <p>100%</p>
             </div>
             <div class="left_3_percentage">
@@ -95,7 +95,7 @@
               />
             </div>
             <div class="left_3_midd left_3_all">
-              <p>Korean</p>
+              <p><%=user.languages[1]%></p>
               <p>80%</p>
             </div>
             <div class="left_3_percentage">
@@ -106,7 +106,7 @@
               />
             </div>
             <div class="left_3_bottom left_3_all">
-              <p>English</p>
+              <p><%=user.languages[2]%></p>
               <p>70%</p>
             </div>
             <div class="left_3_percentage">
@@ -124,7 +124,7 @@
               <p class="left_4_title">Skills</p>
             </div>
             <div class="left_4_top left_4_all">
-              <p>Html</p>
+              <p><%=user.skills[0]%></p>
               <p>90%</p>
             </div>
             <div>
@@ -134,7 +134,7 @@
               />
             </div>
             <div class="left_4_midd1 left_4_all">
-              <p>CSS</p>
+              <p><%=user.skills[1]%></p>
               <p>85%</p>
             </div>
             <div>
@@ -144,7 +144,7 @@
               />
             </div>
             <div class="left_4_midd2 left_4_all">
-              <p>Js</p>
+              <p><%=user.skills[2]%></p>
               <p>80%</p>
             </div>
             <div>
@@ -154,7 +154,7 @@
               />
             </div>
             <div class="left_4_midd3 left_4_all">
-              <p>PHP</p>
+              <p><%=user.skills[3]%></p>
               <p>75%</p>
             </div>
             <div>
@@ -164,7 +164,7 @@
               />
             </div>
             <div class="left_4_bottom left_4_all">
-              <p>WordPress</p>
+              <p><%=user.skills[4]%></p>
               <p>85%</p>
             </div>
             <div>
@@ -175,11 +175,117 @@
             </div>
           </div>
           <div class="marginer"></div>
-          <div class="left_5"></div>
+          <!-- Left 5 Section Starts ///////////////////////////////// -->
+          <div class="left_5">
+            <div>
+              <p class="left_5_title">Extra Skills</p>
+            </div>
+            <div class="left_5_all">
+              <div>
+                <img src="icon/Icons.svg" alt="" />
+                <p><%=user.extra_skills[0]%></p>
+              </div>
+              <div>
+                <img src="icon/Icons.svg" alt="" />
+                <p><%=user.extra_skills[1]%></p>
+              </div>
+              <div>
+                <img src="icon/Icons.svg" alt="" />
+                <p><%=user.extra_skills[2]%></p>
+              </div>
+              <div>
+                <img src="icon/Icons.svg" alt="" />
+                <p><%=user.extra_skills[3]%></p>
+              </div>
+            </div>
+          </div>
           <div class="marginer"></div>
         </div>
-        <div class="midd_frame"></div>
-        <div class="right_frame"></div>
+        <!-- Left 5 Section Ends ///////////////////////////////// -->
+        <!-- Middle Frame Starts ///////////////////////////////// -->
+        <div class="midd_frame">
+          <div class="midd_frame_top">
+            <div class="midd_frame_top_all">
+              <h1 class="midd_top_title"><%=user.work_place%></h1>
+              <p class="midd_top_about">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Temporibus soluta saepe libero nesciunt quod placeat veniam
+                illum magni aspernatur debitis ea in perspiciatis rem,
+                doloremque suscipit amet est sit fuga.
+              </p>
+              <button class="midd_top_button">
+                <a href="">HIRE ME &#10132;</a>
+              </button>
+            </div>
+            <img src="images/your_image.png" class="midd_top_img" alt="" />
+          </div>
+          <div class="midd_frame_bottom">
+            <div class="my_service">
+              <h1 class="title">My Services</h1>
+              <p class="info"><%=user.service_desc%></p>
+            </div>
+            <div class="midd_bottom_sections">
+              <div class="midd_bottom_1 all_in_one">
+                <img src="box_images/Icons_coding.svg" alt="" />
+                <h1 class="title same">Web Development</h1>
+                <p class="info one_p">Blog, E-commerce</p>
+              </div>
+              <div class="midd_bottom_2 all_in_one">
+                <img src="box_images/illu.svg" alt="" />
+                <h1 class="title same">UI/UX design</h1>
+                <p class="info one_p">mobile app, website design</p>
+              </div>
+              <div class="midd_bottom_3 all_in_one">
+                <img src="box_images/mic.svg" alt="" />
+                <h1 class="title same">sound design</h1>
+                <p class="info one_p">voice over, beat making</p>
+              </div>
+              <div class="midd_bottom_4 all_in_one">
+                <img src="box_images/game.svg" alt="" />
+                <h1 class="title same">game design</h1>
+                <p class="info one_p">character design, props& objects</p>
+              </div>
+              <div class="midd_bottom_5 all_in_one">
+                <img src="box_images/pho.svg" alt="" />
+                <h1 class="title same">photography</h1>
+                <p class="info one_p">portrait, product photography</p>
+              </div>
+              <div class="midd_bottom_6 all_in_one">
+                <h1 class="title same">Advertising</h1>
+                <p class="info one_p"><%=user.about_me%></p>
+                <a href="" class="ordernow">ORDER NOW &raquo;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Middle Frame Ends ///////////////////////////////// -->
+        <!-- Right Frame Starts ///////////////////////////////// -->
+        <div class="right_frame">
+          <div class="contrast_img">
+            <img src="btn_icon/Contrast.svg" alt="" />
+          </div>
+          <div class="right_icons">
+            <div class="right_icon_1 iconlar">
+              <img src="btn_icon/Home.svg" alt="" />
+            </div>
+            <div class="right_icon_2 iconlar">
+              <img src="btn_icon/Service.svg" alt="" />
+            </div>
+            <div class="right_icon_3 iconlar">
+              <img src="btn_icon/Cv.svg" alt="" />
+            </div>
+            <div class="right_icon_4 iconlar">
+              <img src="btn_icon/Portfolio.svg" alt="" />
+            </div>
+            <div class="right_icon_5 iconlar">
+              <img src="btn_icon/Blog.svg" alt="" />
+            </div>
+            <div class="right_icon_6 iconlar">
+              <img src="btn_icon/Contact.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- Right Frame Ends ///////////////////////////////// -->
       </div>
     </div>
   </body>
