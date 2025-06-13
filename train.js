@@ -1,16 +1,101 @@
-// TASK B
+// TASK C
 /*
-Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
-MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
- */
-// MASHQ YECHIMI
-function countNums(a) {
-  const nums = a.split("").filter((char) => char >= "0" && char <= "9").length;
-  return nums;
+Shop nomli class tuzing, va bu class 3 xill parametr qabul qilsin.
+Hamda classning quyidagdek 3'ta metodi bo'lsin:
+
+1) qoldiq
+2) sotish
+3) qabul
+
+Har bir metod ishga tushgan vaqtda log qilinsin
+
+MASALAN:
+const shop = new Shop(4, 5, 2)
+
+shop.qoldiq();
+natija qaytishi kerak: Hozir 20: 40'da 4'ta non, 5'ta lag'mon va 2'ta cola mavjud
+
+shop.sotish("non", 3); & shop.qabul("cola", 4); & shop.qoldiq();
+Natija qaytishi kerak: Hozir 20:50da 1ta non, 5ta lag'mon va 6ta cola mavjud!
+*/
+
+// Avval moment.js kutubxonasi kerak:
+// Agar brauzerda ishlatayotgan bo‘lsangiz, <script> orqali ulashing:
+// <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+
+// Node.js’da ishlatayotgan bo‘lsangiz:
+// terminalda: npm install moment
+
+// Keyin kod:
+
+// Node.js uchun:
+const moment = require("moment");
+
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+
+  vaqt() {
+    return moment().format("HH:mm");
+  }
+
+  qoldiq() {
+    console.log(
+      `Hozir ${this.vaqt()}da ${this.non} ta non, ${this.lagmon} ta lag'mon, ${
+        this.cola
+      } ta cola mavjud`
+    );
+  }
+
+  sotish(nomi, soni) {
+    if (this[nomi] === undefined) {
+      console.log(`Mahsulot nomi xato: ${nomi}`);
+      return;
+    }
+
+    if (this[nomi] < soni) {
+      console.log(`Yetarli ${nomi} yo'q!`);
+      return;
+    }
+
+    this[nomi] -= soni;
+    console.log(`${this.vaqt()}da ${soni} ta ${nomi} sotildi`);
+  }
+
+  qabul(nomi, soni) {
+    if (this[nomi] === undefined) {
+      console.log(`Mahsulot nomi xato: ${nomi}`);
+      return;
+    }
+
+    this[nomi] += soni;
+    console.log(`${this.vaqt()}da ${soni} ta ${nomi} qabul qilindi`);
+  }
 }
-const result = countNums("ad2a54y79wet0sfgb9");
-console.log("result:", result);
-// IZOH: split bilan yakkalab olyapman va filter bilan har bir yahlitlangan character'ni function'dagi ish harakatga solyapman yani 0 ga teng yoki katta va 9 teng yoki kichik bu bilan 0dan 9gacha bolgan hamma sonlarga solishtirish amalga oshadi va bizga hamma sonlani korsatadi hatto 3, 5, 100 honali son bolsa ham.
+
+const shop1 = new Shop(4, 5, 2);
+
+shop1.qoldiq();
+shop1.sotish("non", 3);
+shop1.qabul("cola", 4);
+shop1.qoldiq();
+
+// // TASK B
+// /*
+// Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+// MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+//  */
+// // MASHQ YECHIMI
+// function countNums(a) {
+//   const nums = a.split("").filter((char) => char >= "0" && char <= "9").length;
+//   return nums;
+// }
+// const result = countNums("ad2a54y79wet0sfgb9");
+// console.log("result:", result);
+// // IZOH: split bilan yakkalab olyapman va filter bilan har bir yahlitlangan character'ni function'dagi ish harakatga solyapman yani 0 ga teng yoki katta va 9 teng yoki kichik bu bilan 0dan 9gacha bolgan hamma sonlarga solishtirish amalga oshadi va bizga hamma sonlani korsatadi hatto 3, 5, 100 honali son bolsa ham.
 
 // Task A
 /* 
