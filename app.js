@@ -6,6 +6,7 @@ const app = express();
 // MongoDB call
 const db = require("./server").db();
 const mongodb = require("mongodb");
+const { Plain } = require("mongodb/lib/core");
 
 // 1: Kirish code
 app.use(express.static("public"));
@@ -35,6 +36,26 @@ app.post("/delete-item", (req, res) => {
       res.json({ state: "success" });
     }
   );
+});
+
+app.post("/edit-item", (req, res) => {
+  const data = req.body;
+  console.log(data);
+  db.collection("plans").findOneAndUpdate(
+    { _id: new mongodb.ObjectId(data.id) },
+    { $set: { reja: data.new_input } },
+    (err, data) => {
+      res.json({ state: "success" });
+    }
+  );
+});
+
+app.post("/delete_all", (req, res) => {
+  if (req.body.delete_all) {
+    db.collection("plans").deleteMany(() => {
+      res.json({ state: "Hamma rejalar O'chirildi" });
+    });
+  }
 });
 
 app.get("/author", (req, res) => {
