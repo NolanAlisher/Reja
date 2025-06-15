@@ -1,3 +1,23 @@
+//TASK D
+
+// Ikkita parametra ega function tuzing, va functioning
+// berilgan birinchi va ikkinchi parametr qiymatlari o'zaro to'liq
+// mos kelsa true qiymat qaytarsin
+
+// Masalan: checkContent("mitgroup", "gmtiprou");
+// Yuqoridagi misolda birinchi va ikkinchi parametr qiymatli bir xil
+// ya'ni bir xil harflar qatnashganligi uchun true qiymat qaytaradi.
+function checkContent(a, b) {
+  const A = a.split("").sort().join("");
+  const B = b.split("").sort().join("");
+
+  return A === B;
+}
+
+console.log(checkContent("mitgroup", "gmtiprou"));
+
+// IZOH: parametrga kelayotgan qiymatni split qilib (yakkalab) keyin o'sha yakkalangan qiymatni sort() bosh methodi orqali alfabet boyicha tartiblab olindi va join() built-in methodi orqali uni yana jamlab stringga aylantirdim va qiymatlarni bir-biriga tenglab return qildim.
+
 // TASK C
 /*
 Shop nomli class tuzing, va bu class 3 xill parametr qabul qilsin.
@@ -19,16 +39,7 @@ shop.sotish("non", 3); & shop.qabul("cola", 4); & shop.qoldiq();
 Natija qaytishi kerak: Hozir 20:50da 1ta non, 5ta lag'mon va 6ta cola mavjud!
 */
 
-// Avval moment.js kutubxonasi kerak:
-// Agar brauzerda ishlatayotgan bo‘lsangiz, <script> orqali ulashing:
-// <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
-
-// Node.js’da ishlatayotgan bo‘lsangiz:
-// terminalda: npm install moment
-
-// Keyin kod:
-
-// Node.js uchun:
+/* 
 const moment = require("moment");
 
 class Shop {
@@ -82,6 +93,7 @@ shop1.qoldiq();
 shop1.sotish("non", 3);
 shop1.qabul("cola", 4);
 shop1.qoldiq();
+*/
 
 // // TASK B
 // /*
