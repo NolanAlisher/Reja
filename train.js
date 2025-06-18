@@ -1,3 +1,15 @@
+// E-TASK:
+
+// Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+// MASALAN: getReverse("hello") return qilsin "olleh"
+function reverse(a) {
+  const prep = a.split("").reverse().join("");
+  return prep;
+}
+
+const result = reverse("hello");
+console.log("result :", result);
+
 //TASK D
 
 // Ikkita parametra ega function tuzing, va functioning
@@ -7,14 +19,14 @@
 // Masalan: checkContent("mitgroup", "gmtiprou");
 // Yuqoridagi misolda birinchi va ikkinchi parametr qiymatli bir xil
 // ya'ni bir xil harflar qatnashganligi uchun true qiymat qaytaradi.
-function checkContent(a, b) {
-  const A = a.split("").sort().join("");
-  const B = b.split("").sort().join("");
+// function checkContent(a, b) {
+//   const A = a.split("").sort().join("");
+//   const B = b.split("").sort().join("");
 
-  return A === B;
-}
+//   return A === B;
+// }
 
-console.log(checkContent("mitgroup", "gmtiprou"));
+// console.log(checkContent("mitgroup", "gmtiprou"));
 
 // IZOH: parametrga kelayotgan qiymatni split qilib (yakkalab) keyin o'sha yakkalangan qiymatni sort() bosh methodi orqali alfabet boyicha tartiblab olindi va join() built-in methodi orqali uni yana jamlab stringga aylantirdim va qiymatlarni bir-biriga tenglab return qildim.
 
