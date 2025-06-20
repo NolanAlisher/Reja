@@ -1,14 +1,29 @@
 // E-TASK:
+// Yagona string argumentga ega findDoublers nomli function tuzing
+// Agar stringda bittadan ortiq bir xil harflar ishtirok etgan bo'lsa
+// true yokida false natija qaytarsin.
+
+// MASALAN: findDoublers("hello"); natija true qaytadi. Sababi ikki marotaba takrorlangan 'll' harfi mavjud!
+function findDoublers(string) {
+  const jarayon = string
+    .split("")
+    .some((char, index, arr) => arr.indexOf(char) !== index);
+  return jarayon;
+}
+
+console.log(findDoublers("hello"));
+
+// E-TASK:
 
 // Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
 // MASALAN: getReverse("hello") return qilsin "olleh"
-function reverse(a) {
-  const prep = a.split("").reverse().join("");
-  return prep;
-}
+// function reverse(a) {
+//   const prep = a.split("").reverse().join("");
+//   return prep;
+// }
 
-const result = reverse("hello");
-console.log("result :", result);
+// const result = reverse("hello");
+// console.log("result :", result);
 
 //TASK D
 
